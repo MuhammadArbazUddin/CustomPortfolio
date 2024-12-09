@@ -6,6 +6,6 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["cupcake", "dark"],
+    themes: ["light", "luxury"], // Use the theme names provided by DaisyUI
   },
 };

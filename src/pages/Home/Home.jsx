@@ -1,5 +1,6 @@
 import React from "react";
 import { MaskText } from "../../components/components";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const phrases = [
@@ -8,8 +9,16 @@ const Home = () => {
     "Specializing in React",
     "Creating Seamless Web Experiences",
   ];
+
   return (
-    <div className="relative pl-12 border-l-4 border-l-secondary">
+    <div className="relative pl-12">
+      <motion.div
+        className="absolute left-0 top-0 w-1 bg-primary-content"
+        initial={{ height: "4px" }}
+        animate={{ height: "100%" }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      />
+
       <MaskText phrases={phrases}></MaskText>
     </div>
   );

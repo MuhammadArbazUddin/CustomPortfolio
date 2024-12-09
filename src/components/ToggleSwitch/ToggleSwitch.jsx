@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
 
 const ToggleSwitch = () => {
-  const [theme, setTheme] = useState("cupcake");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "cupcake");
-  }, []);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const handleChange = () => {
-    const newTheme = theme === "cupcake" ? "dark" : "cupcake";
+    const newTheme = theme === "light" ? "luxury" : "light";
     setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
   };
 
   return (
-    <>
-      <input
-        type="checkbox"
-        className="toggle"
-        checked={theme === "dark"}
-        onChange={handleChange}
-      />
-    </>
+    <input
+      type="checkbox"
+      className="toggle"
+      checked={theme === "luxury"}
+      onChange={handleChange}
+    />
   );
 };
 

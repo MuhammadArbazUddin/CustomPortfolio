@@ -88,7 +88,7 @@ const Navbar = () => {
             <img src={arbaz} alt="arbaz" className="w-10 h-10 rounded-full" />
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu text-lg font-semibold menu-horizontal px-1">
               <li>
                 <a>Home</a>
               </li>
